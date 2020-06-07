@@ -1,11 +1,7 @@
-import * as tipos from "https://deno.land/x/case/mod.ts";
+import * as tipos from "https://deno.land/x/case/mod.ts"; //Funções para formatar variáveis
 
-const getLink = ({response} :{response:any}) => {
-    response.body = {'Teste' : tipos.camelCase('testando teste')}
-};
-
-const postLink = async ({request,response} : {request:any,response:any}) => {
-    const result  = await request.body(JSON);
+const setFormat = async ({request,response} : {request:any,response:any}) => {
+    const result  = await request.body(JSON); //Sem utilizar body-parser
     const palavra = result.value.key_wrong;
 
     response.body = { 'Formatações' : {
@@ -28,4 +24,4 @@ const postLink = async ({request,response} : {request:any,response:any}) => {
     }};
 };
 
-export {getLink, postLink};
+export { setFormat };

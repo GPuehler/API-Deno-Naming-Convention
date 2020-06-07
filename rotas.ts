@@ -1,10 +1,9 @@
-import { Router }from 'https://deno.land/x/oak/mod.ts';
-import { getLink, postLink } from './controller.ts';
+import { Router }from 'https://deno.land/x/oak/mod.ts'; //Para métodos HTTP
+import { setFormat } from './controller.ts';
 
 const router = new Router();
 
 router
-    .get('/qrcode',getLink)
-    .post('/post',postLink); //Enviar um link do Linkedin e retornar um link pro QR-Code
+    .post('/format', setFormat);
 
 export default router;

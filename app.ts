@@ -1,4 +1,4 @@
-import { Application } from 'https://deno.land/x/oak/mod.ts'
+import { Application } from 'https://deno.land/x/oak/mod.ts';
 import router from './rotas.ts';
 import { serve } from "https://deno.land/std@0.55.0/http/server.ts";
 const s = serve({ port: 8000 });
